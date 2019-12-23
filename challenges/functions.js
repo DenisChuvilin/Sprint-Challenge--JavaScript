@@ -30,24 +30,24 @@ function greeting(firstName, lastName) {
 }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-//console.log(consume(2, 2, add)); // 4
-//console.log(consume(10, 16, multiply)); // 160
-//console.log(consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
 
 // ==== Closures ====
 
 // Explain in your own words why nestedfunction can access the variable internal.
 
-// Explanation: because the inside function can reach out and get info from the outside function, but not vice versa.
+// Explanation: because functions look outside their scope for context. The inside function can reach out and get data from the outside the function, when data is not available within the called function. This search continues up the command line until it reaches global scope.
 
 const external = "I'm outside the function";
 
 function myFunction() {
-  //console.log(external);
+  console.log(external);
   const internal = "Hello! I'm inside myFunction!";
 
   function nestedFunction() {
-    //console.log(internal);
+    console.log(internal);
   }
   nestedFunction();
 }
